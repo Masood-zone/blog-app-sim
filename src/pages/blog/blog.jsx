@@ -21,7 +21,10 @@ function SingleBlog() {
       <div className="flex flex-col my-10 py-5 ">
         {/* Image */}
         <figure>
-          <img src={blog?.posts[0]?.image} className="w-full h-full" />
+          <img
+            src={blog?.posts[0]?.image}
+            className="w-[640px] mx-auto max-md:w-full max-sm:w-full h-full"
+          />
         </figure>
         {/* content */}
         <div className="py-5 px-5 max-w-4xl mx-auto">
