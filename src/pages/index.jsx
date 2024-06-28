@@ -3,6 +3,7 @@ import { createBrowserRouter } from "react-router-dom";
 import MainPage from "./home";
 import { Route } from "react-router-dom";
 import Layout from "./layout";
+import MainFormPage from "./auth/index.jsx";
 
 const rootRoutes = createBrowserRouter(
   createRoutesFromElements(
@@ -36,6 +37,22 @@ const rootRoutes = createBrowserRouter(
             return { Component: Contact };
           }}
         />
+        <Route path="/auth" element={<MainFormPage />}>
+          <Route
+            path="login"
+            lazy={async () => {
+              const { default: Login } = await import("./auth/login");
+              return { Component: Login };
+            }}
+          />
+          <Route
+            path="signup"
+            lazy={async () => {
+              const { default: Signup } = await import("./auth/signup");
+              return { Component: Signup };
+            }}
+          />
+        </Route>
       </Route>
     </Route>
   )

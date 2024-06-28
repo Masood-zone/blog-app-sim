@@ -3,6 +3,10 @@ import { NAVLINKS } from "./data";
 import { Link } from "react-router-dom";
 import { useLocation } from "react-router-dom";
 import { Menu } from "lucide-react";
+import { useSelector } from "react-redux";
+import { userNameFormatter } from "../../utils/userNameFormatter";
+import { useDispatch } from "react-redux";
+import { clearUser } from "../../reduxApp/user.slice";
 
 function Navbar() {
   const location = useLocation();
@@ -30,6 +34,9 @@ function Navbar() {
               )}
             </li>
           ))}
+        </ul>
+        <ul className="menu menu-horizontal gap-5">
+          <UserInfo />
         </ul>
       </div>
       <div className="navbar-end lg:hidden ">
@@ -65,5 +72,74 @@ function MobileView() {
         ))}
       </ul>
     </div>
+  );
+}
+
+function UserNotLoggedIn() {
+  return (
+    <>
+      <li className="flex flex-col">
+        <Link
+          to="/auth/login"
+          className="uppercase text-xl font-mono font-medium"
+        >
+          Login
+        </Link>
+      </li>
+      <li>
+        <Link
+          to="/auth/signup"
+          className="uppercase text-xl font-mono font-medium"
+        >
+          Register
+        </Link>
+      </li>
+    </>
+  );
+}
+
+function UserInfo() {
+  const { user } = useSelector((state) => state.user);
+  const dispatch = useDispatch();
+  return user?.id !== null ? (
+    <div className="dropdown dropdown-end">
+      <div className="flex items-center">
+        <div
+          tabIndex={0}
+          role="button"
+          className="btn btn-circle avatar placeholder"
+        >
+          <div className="w-10 rounded-full text-xl">
+            {userNameFormatter(user?.username)}
+          </div>
+        </div>
+        <div className="ml-2 flex flex-col">
+          <span className=" text-lg">{user?.username}</span>
+          <span className="">{user?.email}</span>
+        </div>
+      </div>
+      <ul
+        tabIndex={0}
+        className="menu menu-sm dropdown-content bg-base-100 rounded-box z-[1] mt-3 w-52 p-2 shadow"
+      >
+        <li>
+          <a className="justify-between">
+            Profile
+            <span className="badge">New</span>
+          </a>
+        </li>
+        <li>
+          <a
+            onClick={() => {
+              dispatch(clearUser());
+            }}
+          >
+            Logout
+          </a>
+        </li>
+      </ul>
+    </div>
+  ) : (
+    <UserNotLoggedIn />
   );
 }
