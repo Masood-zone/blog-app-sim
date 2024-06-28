@@ -70,6 +70,9 @@ function MobileView() {
             </Link>
           </li>
         ))}
+        <ul className="menu menu-horizontal gap-5 sm:gap-1 sm:w-full">
+          <UserInfo />
+        </ul>
       </ul>
     </div>
   );
@@ -78,18 +81,18 @@ function MobileView() {
 function UserNotLoggedIn() {
   return (
     <>
-      <li className="flex flex-col">
+      <li className="flex flex-col ">
         <Link
           to="/auth/login"
-          className="uppercase text-xl font-mono font-medium"
+          className="capitalize text-xl font-mono font-medium max-md:uppercase"
         >
           Login
         </Link>
       </li>
-      <li>
+      <li className="">
         <Link
           to="/auth/signup"
-          className="uppercase text-xl font-mono font-medium"
+          className="capitalize text-xl font-mono font-medium max-md:uppercase"
         >
           Register
         </Link>

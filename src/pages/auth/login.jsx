@@ -38,7 +38,7 @@ function Login() {
     }
   };
   return (
-    <div className="w-96 shadow h-auto p-5">
+    <div className="w-96 max-[399px]:w-[300px] shadow h-auto p-5">
       <div className="my-5">
         <h1 className="text-2xl font-bold uppercase ">Blog app</h1>
         <p>Welcome back!</p>

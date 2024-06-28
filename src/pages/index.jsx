@@ -3,7 +3,7 @@ import { createBrowserRouter } from "react-router-dom";
 import MainPage from "./home";
 import { Route } from "react-router-dom";
 import Layout from "./layout";
-import MainFormPage from "./auth/index.jsx";
+import MainFormPage from "./auth/index";
 
 const rootRoutes = createBrowserRouter(
   createRoutesFromElements(
