@@ -2,7 +2,6 @@ import React from "react";
 import { useQuery } from "react-query";
 import { getBlogs } from "../../api/api";
 import { Link } from "react-router-dom";
-import { useNavigate } from "react-router-dom";
 import { BookMarked } from "lucide-react";
 
 function Blogs() {
