@@ -1,12 +1,10 @@
 import React from "react";
-import { useQuery } from "react-query";
-import { getBlogs } from "../../api/api";
 import { Link } from "react-router-dom";
 import { BookMarked } from "lucide-react";
+import blogApi from "../../reduxApp/api";
 
 function Blogs() {
-  const { data: blogs, error, isLoading } = useQuery("blogs", getBlogs);
-  console.log(blogs);
+  const { data: blogs, error, isLoading } = blogApi.useGetBlogsQuery();
   return (
     <section className="max-w-4xl mx-auto">
       <FirstBlog data={blogs} isLoading={isLoading} error={error} />

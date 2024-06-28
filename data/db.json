@@ -1,7 +1,7 @@
 {
   "blogs": [
     {
-      "id": 1,
+      "id": "1",
       "title": "Introduction to Blogging",
       "authors": {
         "id": 1,
@@ -49,7 +49,7 @@
       ]
     },
     {
-      "id": 2,
+      "id": "2",
       "title": "The Benefits of Open Source",
       "authors": {
         "id": 2,
@@ -97,7 +97,7 @@
       ]
     },
     {
-      "id": 3,
+      "id": "3",
       "title": "Exploring JavaScript Frameworks",
       "authors": {
         "id": 9,
@@ -145,7 +145,7 @@
       ]
     },
     {
-      "id": 4,
+      "id": "4",
       "title": "The Importance of Code Documentation",
       "authors": {
         "id": 3,
@@ -193,7 +193,7 @@
       ]
     },
     {
-      "id": 5,
+      "id": "5",
       "title": "The Future of Artificial Intelligence",
       "authors": {
         "id": 4,
@@ -241,7 +241,7 @@
       ]
     },
     {
-      "id": 6,
+      "id": "6",
       "title": "Building Scalable Web Applications",
       "authors": {
         "id": 5,
@@ -289,7 +289,7 @@
       ]
     },
     {
-      "id": 7,
+      "id": "7",
       "title": "The Rise of DevOps",
       "authors": {
         "id": 6,
@@ -337,7 +337,7 @@
       ]
     },
     {
-      "id": 8,
+      "id": "8",
       "title": "Securing Your Web Applications",
       "authors": {
         "id": 7,
@@ -383,6 +383,26 @@
           "timestamp": "2024-07-25T19:00:00Z"
         }
       ]
+    }
+  ],
+  "users": [
+    {
+      "id": "1",
+      "username": "John Doe",
+      "email": "john@gmail.com",
+      "password": "password123"
+    },
+    {
+      "id": "3cfd",
+      "username": "King Kaisel",
+      "email": "kaisel@gmail.com",
+      "password": "kirito"
+    },
+    {
+      "id": "d620",
+      "username": "Masood",
+      "email": "masood@gmail.com",
+      "password": "masood"
     }
   ]
 }

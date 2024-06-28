@@ -1,15 +1,14 @@
 import React from "react";
-import { useQuery } from "react-query";
 import { useParams } from "react-router-dom";
-import { getBlogs } from "../../api/api";
 import moment from "moment";
 import { Facebook } from "lucide-react";
 import { Twitter } from "lucide-react";
 import { lookingEyes } from "../../assets";
+import blogApi from "../../reduxApp/api";
 
 function SingleBlog() {
   const { id } = useParams();
-  const { data } = useQuery("singleBlog", getBlogs);
+  const { data } = blogApi.useGetBlogsQuery();
   const blog = data?.find((blog) => blog.id === id);
   console.log(blog);
   return (
@@ -126,7 +125,7 @@ export default SingleBlog;
 
 function ReadMore() {
   const { id } = useParams();
-  const { data, error, isLoading } = useQuery("blogs", getBlogs);
+  const { data, error, isLoading } = blogApi.useGetBlogsQuery();
   const relatedArticles = data?.filter((blog) => blog.id !== id);
   if (isLoading) {
     return (
