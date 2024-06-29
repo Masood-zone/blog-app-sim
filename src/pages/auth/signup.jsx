@@ -33,7 +33,9 @@ function Signup() {
   return (
     <div className="w-96 max-[399px]:w-[300px] max-[399px]:mx-auto shadow h-auto p-5">
       <div className="my-5">
-        <h1 className="text-2xl font-bold uppercase ">Create an Account</h1>
+        <h1 className="text-2xl font-bold uppercase max-[499px]:text-lg">
+          Create an Account
+        </h1>
         <p>Join us and see how awesome things are!</p>
       </div>
       <form
@@ -41,7 +43,10 @@ function Signup() {
         onSubmit={handleSubmit(onSubmit)}
       >
         <div className="flex flex-col w-full">
-          <label className="text-lg py-2" htmlFor="username">
+          <label
+            className="text-lg py-2 max-[499px]:text-base"
+            htmlFor="username"
+          >
             Username
           </label>
           <input
@@ -58,7 +63,7 @@ function Signup() {
           )}
         </div>
         <div className="flex flex-col w-full">
-          <label className="text-lg py-2" htmlFor="email">
+          <label className="text-lg py-2 max-[499px]:text-base" htmlFor="email">
             Email
           </label>
           <input
@@ -75,7 +80,10 @@ function Signup() {
           )}
         </div>
         <div className="flex flex-col w-full ">
-          <label className="text-lg py-2" htmlFor="password">
+          <label
+            className="text-lg py-2 max-[499px]:text-base"
+            htmlFor="password"
+          >
             Password
           </label>
           <div className="relative">
