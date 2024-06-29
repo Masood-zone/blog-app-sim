@@ -31,7 +31,7 @@ function Signup() {
     }
   };
   return (
-    <div className="w-96 max-[399px]:w-[300px] shadow h-auto p-5">
+    <div className="w-96 max-[399px]:w-[300px] max-[399px]:mx-auto shadow h-auto p-5">
       <div className="my-5">
         <h1 className="text-2xl font-bold uppercase ">Create an Account</h1>
         <p>Join us and see how awesome things are!</p>
